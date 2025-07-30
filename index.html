@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Time Complexity Analyzer</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+  <link href="styles.css" rel="stylesheet" />
+</head>
+<body class="dark-theme">
+  <div class="container mt-5">
+    <h2 class="text-center mb-4 text-light">🧮 Time Complexity Calculator</h2>
+
+    <label for="codeInput" class="form-label fw-bold text-light">Enter C Code:</label>
+
+    <div class="editor-container mb-3">
+      <pre id="highlightedCode" class="language-c code-output"></pre>
+      <div id="codeInput" class="code-input" contenteditable="true" spellcheck="false" aria-label="C code input"></div>
+    </div>
+
+    <button class="btn btn-primary" onclick="analyzeCode()">Analyze</button>
+
+    <div class="mt-4">
+      <h4 class="text-light">📘 Step-by-Step Complexity Analysis:</h4>
+      <pre class="output-area rounded"><code id="output" class="language-c"></code></pre>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-c.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
