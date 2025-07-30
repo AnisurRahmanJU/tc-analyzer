@@ -8,12 +8,16 @@ function syncHighlight() {
   highlightedCode.innerHTML = Prism.highlight(escaped, Prism.languages.c, "c");
 }
 
-// Sync highlight on input
-codeInput.addEventListener("input", () => {
-  syncHighlight();
+// Sync scroll between input and highlight layer
+codeInput.addEventListener("scroll", () => {
+  highlightedCode.scrollTop = codeInput.scrollTop;
+  highlightedCode.scrollLeft = codeInput.scrollLeft;
 });
 
-// Initialize with bubble sort code
+// Sync highlight on typing
+codeInput.addEventListener("input", syncHighlight);
+
+// Initial example code: Bubble Sort
 window.onload = () => {
   const sampleCode = `void bubbleSort(int arr[], int n) {
   for (int i = 0; i < n - 1; i++) {
