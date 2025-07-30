@@ -3,21 +3,20 @@ const highlightedCode = document.getElementById("highlightedCode");
 const outputDiv = document.getElementById("output");
 
 function syncHighlight() {
-  let code = codeInput.textContent || "";
-  let escaped = code.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-  highlightedCode.innerHTML = Prism.highlight(escaped, Prism.languages.c, "c");
+  const code = codeInput.innerText;
+  highlightedCode.innerHTML = Prism.highlight(code, Prism.languages.c, "c");
 }
 
-// Sync scroll between input and highlight layer
+// Sync scrolling
 codeInput.addEventListener("scroll", () => {
   highlightedCode.scrollTop = codeInput.scrollTop;
   highlightedCode.scrollLeft = codeInput.scrollLeft;
 });
 
-// Sync highlight on typing
+// Sync typing
 codeInput.addEventListener("input", syncHighlight);
 
-// Initial example code: Bubble Sort
+// Initial load
 window.onload = () => {
   const sampleCode = `void bubbleSort(int arr[], int n) {
   for (int i = 0; i < n - 1; i++) {
@@ -30,12 +29,12 @@ window.onload = () => {
     }
   }
 }`;
-  codeInput.textContent = sampleCode;
+  codeInput.innerText = sampleCode;
   syncHighlight();
 };
 
 function analyzeCode() {
-  const code = codeInput.textContent;
+  const code = codeInput.innerText;
   outputDiv.textContent = "";
 
   if (!code.trim()) {
@@ -121,6 +120,7 @@ function analyzeCode() {
     steps.push(`T(n) = C1`);
   }
 
-  outputDiv.textContent = steps.join("\n");
+    outputDiv.textContent = steps.join("\n");
   Prism.highlightElement(outputDiv);
 }
+
