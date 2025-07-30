@@ -122,5 +122,5 @@ function analyzeCode() {
 
     outputDiv.textContent = steps.join("\n");
   Prism.highlightElement(outputDiv);
-}
+} 
 
