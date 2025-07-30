@@ -1,5 +1,27 @@
 # Time Complexity Calculator
 ## Examples
+## ```Basics```
+```c
+int main() {
+    int a = 10, b = 20;
+    int sum = a + b;
+
+    printf("Sum is: %d\n", sum);
+
+    return 0;
+}
+```
+```c
+if (n % 2 == 0) {
+        printf("Even number\n");
+    } else {
+        printf("Odd number\n");
+    }
+
+    return 0;
+}
+```
+
 ## ```Sorting```
 ```Bubble Sort```
 ```c
