@@ -8,6 +8,7 @@ body.dark-theme {
 .editor-container {
   position: relative;
   height: 300px;
+  overflow: hidden;
 }
 
 .code-input,
@@ -17,6 +18,7 @@ body.dark-theme {
   border-radius: 6px;
   padding: 1rem;
   white-space: pre-wrap;
+  word-wrap: break-word;
   overflow: auto;
   width: 100%;
   height: 100%;
