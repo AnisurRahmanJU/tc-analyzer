@@ -1,1 +1,1 @@
-# tc-calculator
+# tc-analyzer
