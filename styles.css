@@ -1,7 +1,7 @@
 body.dark-theme {
   background-color: #121212;
   color: #e0e0e0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'JetBrains Mono', monospace;
   min-height: 100vh;
 }
 
