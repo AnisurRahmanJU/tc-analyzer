@@ -1,7 +1,7 @@
 body.dark-theme {
   background-color: #121212;
   color: #e0e0e0;
-  font-family: 'JetBrains Mono', monospace;
+  font: 'JetBrains Mono';
   min-height: 100vh;
 }
 
@@ -13,7 +13,7 @@ body.dark-theme {
 
 .code-input,
 .code-output {
-  font-family: 'JetBrains Mono', monospace;
+  font: 'JetBrains Mono';
   font-size: 1rem;
   border-radius: 6px;
   padding: 1rem;
@@ -51,7 +51,7 @@ body.dark-theme {
 .output-area {
   background-color: #1e1e1e;
   color: #d4d4d4;
-  font-family: 'JetBrains Mono', monospace;
+  font: 'JetBrains Mono';
   font-size: 1rem;
   padding: 1rem;
   opacity: 0.75;
@@ -65,7 +65,7 @@ body.dark-theme {
 
 .output-area code {
   display: block;
-  font-family: 'JetBrains Mono', monospace;
+  font: 'JetBrains Mono';
   white-space: pre;
   overflow-x: auto;
 } 
