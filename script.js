@@ -127,26 +127,26 @@ function analyzeCode() {
     steps.push(`\nStep 1: T(n) = ${a}·T(n/${b}) + C·${f}`);
     const logba = Math.log(a) / Math.log(b);
     steps.push(`Step 2: log_b(a) = log_${b}(${a}) = ${logba.toFixed(2)}`);
-    steps.push(`Step 3: Compare f(n) = Θ(${f}) to n^log_b(a) = Θ(n^${logba.toFixed(2)})`);
+    // Changed Θ to O here:
+    steps.push(`Step 3: Compare f(n) = O(${f}) to n^log_b(a) = O(n^${logba.toFixed(2)})`);
 
     if (Math.abs(logba - 1) < 0.01) {
-      steps.push(`→ Case 2: f(n) = Θ(n^log_b(a)) ⇒ T(n) = Θ(n log n)`);
+      steps.push(`→ Case 2: f(n) = O(n^log_b(a)) ⇒ T(n) = O(n log n)`); // fixed Θ → O
       steps.push(`\n🟢 Final Time Complexity: O(n log n)`);
     } else if (logba > 1) {
-      steps.push(`→ Case 1: T(n) = Θ(n^${logba.toFixed(2)})`);
+      steps.push(`→ Case 1: T(n) = O(n^${logba.toFixed(2)})`); // fixed Θ → O
     } else {
-      steps.push(`→ Case 3: T(n) = Θ(n)`);
+      steps.push(`→ Case 3: T(n) = O(n)`); // fixed Θ → O
     }
   }
 
-  // Linear Search Detection (redundant with above but kept as extra)
+  // Redundant detections for safety
   if (isLinearSearch) {
     steps.push(`\n🔎 Detected pattern of Linear Search`);
     steps.push(`➡️ Time Complexity: O(n)`);
     steps.push(`\nT(n) = C1 + C2·n`);
   }
 
-  // Binary Search Detection (redundant but kept for safety)
   if (isBinarySearch) {
     steps.push(`\n🔎 Detected pattern of Binary Search`);
     steps.push(`➡️ Time Complexity: O(log n)`);
